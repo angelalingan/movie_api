@@ -1,0 +1,12 @@
+* {
+  box-sizing: border-box;
+ }
+
+body {
+  background-color: #dddddd;
+  font-family: 'Inter', sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.6;
+}
