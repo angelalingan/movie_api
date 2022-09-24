@@ -1,16 +1,12 @@
 const express = require('express'),
   app = express(),
   bodyParser = require('body-parser'),
-  fs = require('fs'),
-  path = require('path'),
   morgan = require('morgan');
 
-//Serving Static Files
-app.use('/documentation.html', express.static('public'));
+//Serving Static Files: instructing express to serve every file under the public directory
+app.use(express.static('public'));
 
 //logging with morgan
-const accessLogStream = fs.createWriteStream(
-  path.join(__dirname, 'log.txt'), {flags: 'a'});
 app.use(morgan('common'));
 
 let movies = [
@@ -78,10 +74,6 @@ let movies = [
 // GET requests
 app.get('/', (req, res) => {
   res.send('Welcome to the movie API!');
-});
-
-app.get('/documentation', (req, res) => {
-  res.sendFile('public/documentation.html', { root: __dirname });
 });
 
 app.get('/movies', (req, res) => {
