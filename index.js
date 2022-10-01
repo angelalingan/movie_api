@@ -38,6 +38,7 @@ let movies = [
       Name: 'James Cameron',
       Bio: 'A Canadian filmmaker. Best known for making science fiction and epic films',
       Birth: 'August 16, 1954',
+      Death: NULL
     },
   },
 
@@ -52,6 +53,7 @@ let movies = [
 			Name: 'James Cameron',
 			Bio: 'A Canadian filmmaker. Best known for making science fiction and epic films',
       Birth: 'August 16, 1954',
+      Death: NULL
 		},
 	},
 
@@ -66,6 +68,7 @@ let movies = [
 			Name: 'Matt Reeves',
 			Bio: 'An American film director, producer and screenwriter.',
       Birth: 'April 27, 1966',
+      Death: NULL
 		},
 	},
 
@@ -78,8 +81,9 @@ let movies = [
 		},
 		Director: {
 			Name: 'Chris Columbus',
-			Bio: 'An American filmmaker',
+			Bio: 'An American filmmaker. After writing screenplays for several teen comedies in the mid-1980s, he made his directorial debut with a teen adventure, Adventures in Babysitting (1987). Columbus gained recognition soon after with the highly successful Christmas comedy Home Alone (1990) and its sequel Home Alone 2: Lost in New York (1992).',
       Birth: 'September 10, 1958',
+      Death: NULL
 		},
 	},
 
@@ -92,9 +96,86 @@ let movies = [
 		},
 		Director: {
 			Name: 'Jordan Peele',
-			Bio: 'February 21, 1979',
+			Bio: 'An American actor, comedian, and filmmaker. He is best known for his film and television work in the comedy and horror genres.',
+      Birth:'February 21, 1979',
+      Death: NULL
 		},
 	},
+
+  {
+    Title: 'Nope',
+    Description: "A 2022 American neo-Western science fiction horror film directed, written, and co-produced by Jordan Peele that stars Daniel Kaluuya and Keke Palmer as horse-wrangling siblings attempting to capture evidence of an unidentified flying object.",
+    Genre: {
+      Name: 'Science fiction',
+      Description: 'A genre of speculative fiction which typically deals with imaginative and futuristic concepts such as advanced science and technology, space exploration, time travel, parallel universes, extraterrestrial life, sentient artificial intelligence, cybernetics, certain forms of immortality (like mind uploading), and the singularity',
+    },
+    Director: {
+      Name: 'Jordan Peele',
+      Bio: 'An American actor, comedian, and filmmaker. He is best known for his film and television work in the comedy and horror genres.',
+      Birth:'February 21, 1979',
+      Death: NULL
+    },
+  },
+
+  {
+		Title: 'Men In Black',
+		Description: "A 1997 American science fiction, action, comedy film that stars Tommy Lee Jones and Will Smith as two agents of a secret organization called the Men in Black, who supervise extraterrestrial lifeforms who live on Earth and hide their existence from ordinary humans. ",
+		Genre: {
+			Name: 'Science fiction',
+      Description: 'A genre of speculative fiction which typically deals with imaginative and futuristic concepts such as advanced science and technology, space exploration, time travel, parallel universes, extraterrestrial life, sentient artificial intelligence, cybernetics, certain forms of immortality (like mind uploading), and the singularity',
+		},
+		Director: {
+			Name: 'Barry Sonnenfeld',
+			Bio: 'An American filmmaker and television director.',
+      Birth: 'April 1, 1953',
+      Death: NULL
+		},
+	},
+
+  {
+		Title: 'Indiana Jones and the Last Crusade',
+		Description: 'A 1989 American action-adventure film about a man searches for his father, a Holy Grail scholar, who has been kidnapped and held hostage by the Nazis while on a journey to find the Holy Grail.',
+		Genre: {
+			Name: 'Action',
+      Description: 'A film genre in which the protagonist is thrust into a series of events that typically involve violence and physical feats. The genre tends to feature a mostly resourceful hero struggling against incredible odds, which include life-threatening situations, a dangerous villain, or a pursuit which usually concludes in victory for the hero.'
+		},
+		Director: {
+			Name: 'Steven Spielberg',
+			Bio: 'An American film director, producer and screenwriter.',
+      Birth: 'December 18, 1946',
+      Death: NULL
+		},
+	},
+
+  {
+		Title: 'It',
+		Description: 'A 2017 American supernatural horror film about seven preteen outcasts that fight an evil demon that poses as a child-killing clown.',
+		Genre: {
+			Name: 'Horror',
+      Description: 'A film genre that seeks to elicit fear or disgust in its audience for entertainment purposes.',
+		},
+		Director: {
+			Name: 'Andy Muschietti',
+			Bio: 'An Argentine filmmaker who achieved wide recognition with the 2013 film Mama which he made with Neil Cross and his sister, producer and screenwriter Barbara Muschietti, based on their three-minute film of the same name.',
+      Birth:'August 26, 1973',
+      Death: NULL
+		},
+	},
+
+  {
+    Title: 'Train to Busan',
+    Description: 'A 2016 South Korean action horror film that takes place on a high-speed train from Seoul to Busan as a zombie apocalypse suddenly breaks out in the country and threatens the safety of the passengers.',
+    Genre: {
+      Name: 'Horror',
+      Description: 'A film genre that seeks to elicit fear or disgust in its audience for entertainment purposes.',
+    },
+    Director: {
+      Name: 'Yeon Sang-ho',
+      Bio: 'A South Korean film director and screenwriter. He gained international popularity for working his adult animated films The King of Pigs (2011) and The Fake (2013), and the live-action film Train to Busan (2016).',
+      Birth:'December 25, 1978',
+      Death: NULL
+    },
+  },
 ];
 
 //CREATE: Allow new users to register
