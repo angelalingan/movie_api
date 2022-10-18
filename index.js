@@ -13,11 +13,18 @@ const Genres = Models.Genre;
 const Directors = Models.Director;
 //const app = express();
 
-mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://127.0.0.1:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
 //Returns middleware that only parses JSON
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+//Imports "auth.js" file into project
+let auth = require('./auth')(app);
+
+//Requires the Passport module and imports the "passport.js" file into project
+const passport = require('passport');
+require('./passport');
 
 //Serving Static Files: instructing express to serve every file under the public directory
 app.use(express.static('public'));
@@ -317,15 +324,15 @@ app.get('/', (req, res) => {
 });
 
 //READ: Return a list of ALL movies to the user
-app.get('/movies', (req, res) => {
+app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => { //applied JWT authentication to a specific endpoint, by passing it as a second parameter between the URL and callback function
   Movies.find()
-  .then((movies) => {
-    res.status(200).json(movies);
-  })
-  .catch((err) => {
-    console.error(err);
-    res.status(500).send('Error: ' + err);
-  });
+    .then((movies) => {
+      res.status(201).json(movies);
+    })
+    .catch((error) => {
+      console.error(error);
+      res.status(500).send('Error: ' + error);
+    });
 });
   //res.status(200).json(movies);
 //});
