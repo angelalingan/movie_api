@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //Imports "auth.js" file into project
-let auth = require('./auth')(app);
+// ---------->let auth = require('./auth')(app);
 
 //Requires the Passport module and imports the "passport.js" file into project
 const passport = require('passport');
@@ -276,7 +276,7 @@ app.post('/users/:Username/movies/:MovieID', (req, res) => {
 });
 
 //DELETE: Allow users to remove a movie from their list of favorites
-app.delete('/users/:id/:movieTitle', (req, res) => {
+app.delete('/users/:Username/movies/:MovieID', (req, res) => {
   Users.findOneAndUpdate({ Username: req.params.Username}, {
       $pull: { FavoriteMovies: req.params.MovieID }
     },
@@ -324,15 +324,15 @@ app.get('/', (req, res) => {
 });
 
 //READ: Return a list of ALL movies to the user
-app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => { //applied JWT authentication to a specific endpoint, by passing it as a second parameter between the URL and callback function
+app.get('/movies', (req, res) => {
   Movies.find()
-    .then((movies) => {
-      res.status(201).json(movies);
-    })
-    .catch((error) => {
-      console.error(error);
-      res.status(500).send('Error: ' + error);
-    });
+  .then((movies) => {
+    res.status(200).json(movies);
+  })
+  .catch((err) => {
+    console.error(err);
+    res.status(500).send('Error: ' + err);
+  });
 });
   //res.status(200).json(movies);
 //});
@@ -359,7 +359,7 @@ app.get('/movies/:title', (req, res) => {
 //});
 
 //READ: Return data about a genre by name/title
-app.get('/movies/genre/:genreName', (req, res) => {
+app.get('/movies/genres/:Name', (req, res) => {
   Movies.findOne({ "Genre.Name": req.params.Name})
   .then((movies) => {
     res.send(movies.Genre);
@@ -380,7 +380,7 @@ app.get('/movies/genre/:genreName', (req, res) => {
 //});
 
 //READ: Return data about a director (bio, birth year) by name
-app.get('/movies/director/:directorName', (req, res) => {
+app.get('/movies/directors/:Name', (req, res) => {
   Movies.findOne({"Director.Name": req.params.Name})
   .then((movies) => {
     res.send(movies.Director);
