@@ -1,0 +1,4 @@
+{"_id":{"$oid":"63448d3c5c6cf4047bf51376"},"Username":"Angela Tan","Password":"test123","Email":"stoichiometry20@gmail.com","Birthday":"06/12/1994","FavoriteMovies":[{"$oid":"6344671232666461012eef6b"},{"$oid":"6344682332666461012eef6c"},{"$oid":"63447ca4bcb799e576a4f540"}]}
+{"_id":{"$oid":"6348391f5c6cf4047bf51377"},"Username":"Michael Tan","Password":"test456","Email":"jeisuuu@gmail.com","Birthday":"04/12/1992","FavoriteMovies":[{"$oid":"63446d0e32666461012eef6d"},{"$oid":"63446febbcb799e576a4f53a"}]}
+{"_id":{"$oid":"63483a755c6cf4047bf51378"},"Username":"Stephen More","Password":"test789","Email":"hiromore@gmail.com","Birthday":"03/10/1991","FavoriteMovies":[{"$oid":"63447a9abcb799e576a4f53f"},{"$oid":"6344769ebcb799e576a4f53e"}]}
+{"_id":{"$oid":"63483b325c6cf4047bf51379"},"Username":"Alex Bald","Password":"test012","Email":"alexbaldy@gmail.com","Birthday":"11/01/1994","FavoriteMovies":[{"$oid":"63447a9abcb799e576a4f53f"},{"$oid":"634474efbcb799e576a4f53d"}]}
