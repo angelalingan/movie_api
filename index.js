@@ -386,15 +386,6 @@ app.get('/movies/genres/:Name', passport.authenticate('jwt', { session: false })
     res.status(500).send('Error: ' + err);
   });
 });
-  //const { genreName } = req.params;
-  //const genre = movies.find( movie => movie.Genre.Name === genreName).Genre;
-
-  //if (genre) {
-  //  res.status(200).json(genre);
-  //} else {
-  //  res.status(400).send('This genre is not in the database')
-  //}
-//});
 
 //READ: Return data about a director (bio, birth year) by name
 app.get('/movies/directors/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
@@ -407,15 +398,6 @@ app.get('/movies/directors/:Name', passport.authenticate('jwt', { session: false
     res.status(500).send('Error: ' + err);
   });
 });
-  //const { directorName } = req.params;
-  //const director = movies.find( movie => movie.Director.Name === directorName).Director;
-
-  //if (director) {
-  //  res.status(200).json(director);
-  //} else {
-  //  res.status(400).send('This director is not in the database')
-  //}
-//});
 
 //Error handling
 app.use(bodyParser.urlencoded({
