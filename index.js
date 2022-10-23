@@ -329,17 +329,6 @@ app.delete('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { se
       }
     });
   });
-  //const { id, movieTitle } = req.params;
-
-  //let user = users.find( user => user.id == id);
-
-  //if (user) {
-    //user.favoriteMovies = user.favoriteMovies.filter( title => title !== movieTitle);
-  //  res.status(200).send(`${movieTitle} has been removed from user ${id}'s array`);
-  //} else (
-  //  res.status(404).send('This user is not in the database')
-  //)
-//});
 
 //DELETE: Allow users to deregister, delete a user by username
 app.delete('/users/:Username', passport.authenticate('jwt', { session: false }), (req, res) => {
@@ -373,8 +362,6 @@ app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) 
     res.status(500).send('Error: ' + err);
   });
 });
-  //res.status(200).json(movies);
-//});
 
 //READ: Return data about a single movie by title to the user
 app.get('/movies/:title', passport.authenticate('jwt', { session: false }), (req, res) => {
@@ -387,15 +374,6 @@ app.get('/movies/:title', passport.authenticate('jwt', { session: false }), (req
     res.status(500).send('Error: ' + err);
   });
 });
-  //const { title } = req.params;
-  //const movie = movies.find( movie => movie.Title === title);
-
-  //if (movie) {
-  //  res.status(200).json(movie);
-  //} else {
-  //  res.status(404).send('This movie is not in the database')
-  //}
-//});
 
 //READ: Return data about a genre by name/title
 app.get('/movies/genres/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
@@ -450,6 +428,8 @@ app.use((err, req, res, next) => {
 });
 
 //Listening for requests
+//app.listen(8080, () => {
+  //console.log('Your app is listening on port 8080.');
 const port = process.env.PORT || 8080;
 app.listen(port, '0.0.0.0',() => {
  console.log('Listening on Port ' + port);
